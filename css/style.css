@@ -1,0 +1,62 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fff;
+    color: #000;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #343a40; /* Example footer background color */
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+.navbar .navbar-nav .nav-item .nav-link {
+    color: #fff;
+    font-size: 18px;
+    padding: 15px 20px;
+    transition: color 0.3s ease; /* Smooth transition for color change */
+}
+
+.navbar .navbar-brand img {
+    margin-right: 10px;
+}
+
+.navbar {
+    border-bottom: 1px solid white;
+}
+
+.navbar .nav-item.active .nav-link {
+    color: #f00; 
+}
+
+.navbar .nav-item .nav-link:hover {
+    text-decoration: underline;
+}
+/* Modal Styles */
+.modal-content {
+    border-radius: 15px; /* Rounded corners for the modal */
+}
+
+.modal-header {
+    border-bottom: 1px solid #dee2e6; /* Light border for header */
+}
+
+.modal-footer {
+    border-top: 1px solid #dee2e6; /* Light border for footer */
+}
+
+.modal-body {
+    padding: 2rem; /* Increased padding for better spacing */
+}
+
+/* Optional: Style for the textarea character count */
+.form-text {
+    font-size: 0.875rem;
+    color: #6c757d;
+}
+
+
