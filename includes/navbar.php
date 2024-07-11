@@ -1,7 +1,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="index.php?page=home">
-            <img src="https://sanjayshenoy.com/pages/wp-content/uploads/2022/04/SCK-Logo-Square.jpeg" alt="Logo" style="width:40px;">
+            <img src="img/fotox-logo.jpg" alt="Logo" style="width:60px;">
             Foto X
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -32,9 +32,12 @@
             </ul>
         </div>
         <div class="d-flex">
-            <button class="btn btn-outline-light btn-sm custom-button" data-bs-toggle="modal" data-bs-target="#contactModal">
-                <span>Beni Ara</span>
-            </button>
+        <button class="btn btn-outline-light btn-sm custom-button" data-bs-toggle="modal" data-bs-target="#contactModal">
+         <div>
+         <i class="fa-solid fa-square-phone"></i> Sizi<br>Arayalım
+        </div>
+</button>
+
         </div>
     </div>
 </nav>
