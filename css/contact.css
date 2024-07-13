@@ -1,0 +1,161 @@
+.contact-two-content-all {
+    background-color: #000;
+    color: #fff;
+    padding: 2rem 0; /* Yükseklik ve üst-alttan boşluk */
+    position: relative;
+}
+
+.contact-two-content {
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.contact-two-content .card {
+    border: none;
+    border-radius: 0.25rem;
+    display: flex; /* Flexbox özelliğini ekleyin */
+    flex-direction: column; /* Dikey olarak düzenleyin */
+    height: 100%; /* Card yüksekliğini yüzde 100 yapın */
+}
+
+.contact-two-content .card-body {
+    background-color: #333;
+    color: #fff;
+    border-radius: 0.25rem;
+    padding: 1.5rem;
+    flex: 1; /* Card içeriğini esnek yapın */
+}
+
+.contact-two-content .card-title {
+    color: #f00; /* Card başlık rengini kırmızı yapın */
+    font-family: 'Playwrite CL', sans-serif;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+}
+
+.contact-two-content .card-title i {
+    color: #fff; /* Icon rengini beyaz yapın */
+    margin-right: 0.5rem; /* Icon ve başlık arasına boşluk ekleyin */
+}
+
+.contact-two-content .card-text {
+    font-family: Arial, sans-serif;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+.contact-form {
+    position: relative;
+}
+
+.contact-form .form-group {
+    position: relative;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form .form-label {
+    color: #fff; /* Etiket rengini beyaz yap */
+    position: absolute; /* Etiketi input alanının üstüne yerleştirin */
+    left: 0;
+    top: 50%; /* Başlangıçta ortalanmış */
+    transform: translateY(-50%); /* Yükseklik ortalamasını sağla */
+    transition: 0.3s ease all; /* Etiket geçişi için animasyon */
+    pointer-events: none; /* Etikete tıklamayı engelle */
+}
+
+.contact-form .form-control {
+    border: none; /* Kenarlık yok */
+    border-bottom: 2px solid #fff; /* Sadece alt kenarına kenarlık */
+    border-radius: 0; /* Köşe yuvarlatma yok */
+    background-color: #333;
+    color: #fff;
+    padding: 0.75rem 0.75rem 0.75rem 0.75rem; /* Üst, sağ, alt ve sol boşluklar */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Hover efekti için geçiş */
+}
+
+.contact-form .form-control:focus {
+    border-bottom-color: #000; /* Fokusa geldiğinde alt kenar kırmızı */
+    outline: none; /* Tarayıcı kenarlığını kaldır */
+}
+
+.contact-form .form-control:focus ~ .form-label,
+.contact-form .form-control:not(:placeholder-shown) ~ .form-label {
+    top: -0.75rem; /* Etiketi yukarı kaydır */
+    font-size: 0.75rem; /* Küçültme */
+    color: #fff; /* Etiket rengini kırmızı yap */
+}
+
+.contact-form .form-text {
+    color: #000; /* Hata mesajı rengini kırmızı yap */
+    display: none; /* Başlangıçta hata mesajını gizle */
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+.contact-form .form-control:invalid:focus ~ .form-text {
+    display: block; /* Focus olduğunda ve geçersizse hata mesajını göster */
+}
+
+.contact-form .btn-danger {
+    border-radius: 0.25rem;
+    background-color: #000; /* Buton rengini kırmızı yap */
+    border: none;
+    color: #fff;
+}
+
+.contact-form .btn-danger:hover {
+    background-color: #2e2b2b; /* Buton hover rengi */
+}
+.contact-three-content-all {
+    background-color: #fff; /* Beyaz arka plan */
+    padding: 2rem 0; /* Üst ve alt boşluk */
+}
+
+.contact-three-content {
+    padding: 2rem;
+    border-top: 5px solid #000; /* Üstte kalın çizgi */
+}
+
+.contact-three-heading {
+    font-size: 2rem; /* Başlık boyutu */
+    font-family: 'Playwrite CL', sans-serif;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #000; /* Başlık rengi */
+}
+
+.contact-three-description {
+    font-size: 1rem; /* Açıklama metni boyutu */
+    color: #333; /* Açıklama metni rengi */
+    margin-bottom: 1.5rem;
+}
+
+.accordion-button {
+    color: #000; /* Buton metin rengi */
+    border: none;
+    border-radius: 0.25rem; /* Buton köşe yuvarlatma */
+}
+
+.accordion-button:focus {
+    box-shadow: none; /* Buton focus hali gölgesiz */
+}
+
+
+.accordion-body {
+    font-size: 0.875rem; /* Açıklama metni boyutu */
+    color: #333; /* Açıklama metni rengi */
+}
+
+.accordion-item {
+    margin-bottom: 1rem; /* Kartlar arası boşluk */
+}
+
+@media (max-width: 768px) {
+    .accordion-button {
+        font-size: 1rem; /* Mobilde buton font boyutu */
+    }
+
+    .contact-three-heading {
+        font-size: 1.5rem; /* Mobilde başlık boyutu */
+    }
+}

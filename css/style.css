@@ -57,7 +57,7 @@ body {
 }
 
 .footer .brand-img {
-    width: 200px;
+    width: 150px;
     height:90px;
     margin-bottom: 10px;
 }
@@ -230,7 +230,7 @@ body {
     background-color: #000;
 }
 
-/* Updated styles for home-two-content */
+
 .home-two-content {
     background-color: #fff;
     padding: 20px 0;
@@ -427,7 +427,7 @@ body {
 .home-five-content {
     background-color: #000;
     color: #fff;
-    padding: 40px 20px; /* Yukarı ve aşağı paddingi artırarak yüksekliği artırır */
+    padding: 40px 20px; 
 }
 
 .equipment-content {
@@ -447,15 +447,15 @@ body {
 }
 
 .equipment-list ul {
-    list-style: none; /* Liste işaretlerini kaldırır */
+    list-style: none; 
     padding: 0;
     margin: 0;
     flex: 1;
 }
 
 .equipment-list li {
-    color: #fff; /* Liste maddelerini beyaz yaparak uyum sağlar */
-    margin-bottom: 10px; /* Liste maddeleri arasına boşluk ekler */
+    color: #fff;
+    margin-bottom: 10px;
 }
 
 .equipment-image {

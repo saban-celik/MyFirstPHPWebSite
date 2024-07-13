@@ -1,0 +1,155 @@
+.main-about-div {
+    padding: 0; 
+}
+
+.about-one-content-all {
+    background-color: #000; /* Arka plan rengini siyah yap */
+    color: #fff; /* Metin rengini beyaz yap */
+    min-height: 60vh; /* Sayfanın yarısından biraz fazla yüksekliği kapsar */
+    display: flex;
+    align-items: center; /* İçeriği dikey olarak ortala */
+    justify-content: center; /* İçeriği yatay olarak ortala */
+    text-align: center;
+}
+
+.about-one-content {
+    padding: 20px;
+    border-radius: 15px;
+    max-width: 800px; /* Maksimum genişliği ayarla */
+    background: rgba(0, 0, 0, 0.7); /* İçeriğin arka planını hafifçe saydam yap */
+}
+
+.about-one-content h2 {
+    font-size: 5rem; /* Başlık font boyutunu ayarla */
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.about-one-content p {
+    font-size: 1rem; /* Metin font boyutunu ayarla */
+    margin-bottom: 20px; /* Metin arasına boşluk ekle */
+}
+/* İlk yarı siyah, diğer yarı beyaz */
+.about-two-content-all {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-two-content-half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+
+.about-two-content-half.black {
+    top: 0;
+    background-color: #000;
+}
+
+.about-two-content-half.white {
+    bottom: 0;
+    background-color: #fff;
+}
+
+.about-two-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-two-content img {
+    max-width: 90%; 
+    height: auto;
+}
+/* İlk yarı siyah, diğer yarı beyaz */
+.about-two-content-all {
+    position: relative;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-two-content-half {
+    position: absolute;
+    width: 100%;
+    height: 50%;
+}
+
+.about-two-content-half.black {
+    top: 0;
+    background-color: #000;
+}
+
+.about-two-content-half.white {
+    bottom: 0;
+    background-color: #fff;
+}
+
+/* Resmi hem yatayda hem dikeyde ortalama */
+.about-two-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about-two-content img {
+    max-width: 90%; /* Resmi küçültmek için bu değeri değiştirebilirsiniz */
+    height: auto;
+}
+
+/* about-three-content-all için stiller */
+.about-three-content-all {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+.about-three-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+.about-three-content img {
+    max-width: 500px;
+    height: 400px;
+}
+
+.about-three-text {
+    max-width: 800px;
+    line-height: 1.6;
+}
+/* Başlıklar için Playwrite CL fontu */
+.playwrite-cl-title {
+    font-family: "Playwrite CL", cursive;
+    font-weight: 700; /* Başlık için kalınlık ayarı */
+    font-style: normal;
+}
+
+/* Diğer başlık stilleri (örneğin, h2, h3) */
+.about-three-text h2 {
+    font-family: "Playwrite CL", cursive;
+    font-weight: 700; /* Örnek olarak kalınlığı 700 yaptık, ihtiyaca göre ayarlayabilirsiniz */
+    font-size: 2.5rem; /* Başlık boyutu */
+    margin-bottom: 20px; /* Başlık altına boşluk */
+}
+
+.about-three-text p {
+    font-size: 1.125rem; /* Paragraf boyutu */
+    margin-bottom: 20px; /* Paragraf altına boşluk */
+}
+
+
+

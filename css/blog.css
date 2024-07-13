@@ -1,0 +1,165 @@
+/* Genel stil */
+.main-blog-div {
+    padding: 40px 0;
+}
+
+/* Siyah alanın stili */
+.blog-one-content-all {
+    background-color: #000;
+    color: #fff;
+    height: 50vh; /* Sayfanın yarısı yüksekliğinde */
+    display: flex;
+    align-items: center; /* İçeriği dikey olarak ortala */
+    justify-content: center; /* İçeriği yatay olarak ortala */
+}
+
+/* İçerik kutusu stili */
+.blog-one-content {
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 800px; 
+    font-family: 'Arial', sans-serif; 
+}
+
+/* Başlık stili */
+.blog-one-content h2 {
+    font-size: 2.5rem; /* Yazı boyutunu artır */
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; /* Farklı bir font ailesi */
+}
+
+/* Arama kutusu stili */
+.search-wrapper {
+    position: relative;
+    display: inline-flex; /* Simge ve input yan yana */
+    align-items: center;
+    width: 100%;
+    max-width: 500px; /* Maksimum genişlik ayarla */
+}
+
+.search-wrapper i {
+    position: absolute;
+    left: 10px; /* Sol tarafa hizala */
+    color: #ddd; /* İcon rengi */
+}
+
+.search-wrapper input[type="text"] {
+    width: 100%; /* Genişliği tamamen kullan */
+    padding: 10px;
+    padding-left: 40px; /* Simge için yer bırak */
+    padding-right: 10px; /* Sağ tarafta biraz boşluk bırak */
+    border-radius: 15px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    margin: 0 auto; /* Ortalamak için */
+    display: block;
+}
+
+/* Blog içeriğinin stili */
+.blog-two-content-all {
+    background-color: #fff; /* Beyaz arka plan */
+}
+
+/* İçerik bölümü stili */
+.blog-two-content {
+    background-color: #fff;
+    padding: 40px 0;
+}
+
+/* İçerik kutusu stili */
+.blog-two-content .container {
+    text-align: center;
+}
+
+/* İçerik başlığı stili */
+.blog-two-content h2 {
+    font-size: 2.5rem; /* Yazı boyutunu artır */
+    margin-bottom: 20px;
+    font-family: 'Georgia', serif; /* Farklı bir font ailesi */
+}
+
+/* Kart düzeni */
+.blog-two-content .row {
+    margin-top: 20px;
+}
+
+/* Kart stili */
+.blog-two-content .col-md-4 {
+    margin-bottom: 20px;
+}
+
+/* Kart genel stili */
+.blog-two-content .card {
+    background-color: #f8f9fa;
+    color: #000;
+    border: none;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+/* Kart hover efekti */
+.blog-two-content .card:hover {
+    transform: translateY(-10px);
+}
+
+/* Kart görseli stili */
+.blog-two-content .card-img-top {
+    border-radius: 15px 15px 0 0;
+    max-height: 200px;
+    height: 200px; /* Sabit yükseklik */
+    object-fit: cover;
+}
+
+/* Kart içeriği stili */
+.blog-two-content .card-body {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+/* Kart başlığı stili */
+.blog-two-content .card-title {
+    font-size: 1.5rem; /* Yazı boyutunu artır */
+    margin-top: 10px;
+    font-family: 'Georgia', serif; /* Farklı bir font ailesi */
+}
+
+/* Kart metni stili */
+.blog-two-content .card-text {
+    font-size: 1.2rem; /* Yazı boyutunu artır */
+}
+
+/* Kart bilgi stili */
+.blog-two-content .card-info {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 10px;
+}
+
+/* Daha fazla içerik stili */
+.more-content {
+    margin-top: 20px;
+}
+
+/* Daha fazla buton stili */
+.more-content .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    border-radius: 15px;
+}
+
+/* Gösterilecek başka gönderi yok mesajı stili */
+.more-content #no-more-posts {
+    color: #888;
+}

@@ -1,0 +1,92 @@
+.main-services-div {
+    padding: 40px 0;
+}
+
+.services-one-content-all {
+    background-color: #000; /* Arka plan rengini siyah yap */
+    color: #fff; /* Metin rengini beyaz yap */
+    height: 50vh; /* Sayfanın yarısı yüksekliğinde */
+    display: flex;
+    align-items: center; /* İçeriği dikey olarak ortala */
+    justify-content: center; /* İçeriği yatay olarak ortala */
+    text-align: center;
+}
+
+.services-one-content {
+    padding: 20px;
+    border-radius: 15px;
+    margin: 0 auto;
+    max-width: 800px;
+}
+
+.services-one-content h2 {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    font-family: 'Arial', sans-serif;
+}
+
+.services-one-content p {
+    font-size: 1.2rem;
+    margin-top: 20px;
+    font-family: 'Arial', sans-serif; 
+}
+
+.services-two-content-all {
+    background-color: #fff;
+    color: #000;
+}
+
+.services-two-content {
+    background-color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.services-two-content .container {
+    text-align: center;
+}
+
+/* Kartların resimlerine border radius ekle ve yükseklik ayarla */
+.services-two-content .card-img-top {
+    border-radius: 15px;
+    height: 250px; /* Yüksekliği biraz artır */
+    object-fit: cover; /* Resimlerin taşmadan sığmasını sağla */
+}
+
+/* Kart genişliğini azalt ve border-radius ayarla */
+.services-two-content .card {
+    border: none;
+    border-radius: 10px; /* Köşe yuvarlama */
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 30px; /* Kartlar arasındaki boşluk */
+}
+
+/* Başlık ve açıklama kısmının altına uzun çizgi ekle */
+.services-two-content .card-footer {
+    border-top: 2px solid #000; /* Kalın siyah çizgi */
+    margin-top: 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/* İçerik boşlukları */
+.services-two-content .card-body {
+    padding: 20px;
+    padding-bottom: 40px; /* Alt çizgi için boşluk bırak */
+}
+
+/* Kartların sütun genişliğini ayarla */
+@media (min-width: 768px) {
+    .services-two-content .card {
+        flex: 0 0 30%; /* Üç kartı yan yana sığdırmak için genişlik */
+    }
+}
+
+@media (max-width: 767px) {
+    .services-two-content .card {
+        flex: 0 0 100%; /* Küçük ekranlarda kartlar tam genişlikte */
+    }
+}
