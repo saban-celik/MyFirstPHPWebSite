@@ -460,7 +460,7 @@ body {
 
 .equipment-image {
     flex: 1;
-    text-align: right; /* Resmi sağda hizalar */
+    text-align: right; 
    
 }
 

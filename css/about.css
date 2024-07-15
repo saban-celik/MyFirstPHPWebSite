@@ -1,35 +1,35 @@
 .main-about-div {
-    padding: 0; 
+    padding: 0;
 }
 
 .about-one-content-all {
-    background-color: #000; /* Arka plan rengini siyah yap */
-    color: #fff; /* Metin rengini beyaz yap */
-    min-height: 60vh; /* Sayfanın yarısından biraz fazla yüksekliği kapsar */
+    background-color: #000;
+    color: #fff;
+    min-height: 60vh;
     display: flex;
-    align-items: center; /* İçeriği dikey olarak ortala */
-    justify-content: center; /* İçeriği yatay olarak ortala */
+    align-items: center;
+    justify-content: center;
     text-align: center;
 }
 
 .about-one-content {
     padding: 20px;
     border-radius: 15px;
-    max-width: 800px; /* Maksimum genişliği ayarla */
-    background: rgba(0, 0, 0, 0.7); /* İçeriğin arka planını hafifçe saydam yap */
+    max-width: 800px;
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .about-one-content h2 {
-    font-size: 5rem; /* Başlık font boyutunu ayarla */
+    font-size: 5rem;
     margin-bottom: 20px;
     font-family: 'Arial', sans-serif;
 }
 
 .about-one-content p {
-    font-size: 1rem; /* Metin font boyutunu ayarla */
-    margin-bottom: 20px; /* Metin arasına boşluk ekle */
+    font-size: 1rem;
+    margin-bottom: 20px;
 }
-/* İlk yarı siyah, diğer yarı beyaz */
+
 .about-two-content-all {
     position: relative;
     height: 100vh;
@@ -65,54 +65,14 @@
 }
 
 .about-two-content img {
-    max-width: 90%; 
-    height: auto;
-}
-/* İlk yarı siyah, diğer yarı beyaz */
-.about-two-content-all {
-    position: relative;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-two-content-half {
-    position: absolute;
-    width: 100%;
-    height: 50%;
-}
-
-.about-two-content-half.black {
-    top: 0;
-    background-color: #000;
-}
-
-.about-two-content-half.white {
-    bottom: 0;
-    background-color: #fff;
-}
-
-/* Resmi hem yatayda hem dikeyde ortalama */
-.about-two-content {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.about-two-content img {
-    max-width: 90%; /* Resmi küçültmek için bu değeri değiştirebilirsiniz */
+    max-width: 90%;
     height: auto;
 }
 
-/* about-three-content-all için stiller */
 .about-three-content-all {
     background-color: #fff;
     padding: 40px 0;
+    margin-bottom: 40px;
 }
 
 .about-three-content {
@@ -131,25 +91,155 @@
     max-width: 800px;
     line-height: 1.6;
 }
-/* Başlıklar için Playwrite CL fontu */
+
 .playwrite-cl-title {
-    font-family: "Playwrite CL", cursive;
-    font-weight: 700; /* Başlık için kalınlık ayarı */
-    font-style: normal;
+    font-weight: 700;
 }
 
-/* Diğer başlık stilleri (örneğin, h2, h3) */
 .about-three-text h2 {
-    font-family: "Playwrite CL", cursive;
-    font-weight: 700; /* Örnek olarak kalınlığı 700 yaptık, ihtiyaca göre ayarlayabilirsiniz */
-    font-size: 2.5rem; /* Başlık boyutu */
-    margin-bottom: 20px; /* Başlık altına boşluk */
+    font-weight: 700;
+    font-size: 2.5rem;
+    margin-bottom: 20px;
 }
 
 .about-three-text p {
-    font-size: 1.125rem; /* Paragraf boyutu */
-    margin-bottom: 20px; /* Paragraf altına boşluk */
+    font-size: 1.125rem;
+    margin-bottom: 20px;
+}
+
+.about-four-content-all {
+    background-color: #000;
+    color: #fff;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.about-four-content {
+    max-width: 1000px; /* Daha geniş bir kapsayıcı */
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap; /* Kartların satırlara sarmasını sağlar */
+    justify-content: center; /* Kartları yatayda ortalar */
+}
+
+
+.about-four-content h2 {
+    margin-top: 100px;
+    font-size: 3rem;
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.about-four-content h2::after {
+    content: "";
+    position: absolute;
+    top: -30px; /* Çizginin başlığın üstünde olmasını sağlar */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30%;
+    height: 5px; /* Çizginin kalınlığını başlık kadar yapın */
+    background-color: #fff;
+}
+
+.about-four-content p {
+    font-size: 1.125rem;
+    margin-top: 20px;
+}
+.about-four-content .value-card {
+    background-color: white;
+    color: black;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 10px; 
+    width: 100%; 
+    max-width: 300px; 
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.about-four-content .value-card h3 {
+    margin: 0;
+    font-size: 1.5rem; 
+    margin-bottom: 10px;
+}
+
+.about-four-content .value-card p {
+    font-size: 1rem;
+}
+
+.about-four-content .line {
+    width: 100%;
+    height: 2px;
+    background-color: black;
+    margin: 20px 0;
+}
+
+/* Responsive düzenleme */
+@media (min-width: 768px) {
+    .about-four-content .value-card {
+        width: calc(33.33% - 20px);
+    }
+}
+
+@media (max-width: 767px) {
+    .about-four-content .value-card {
+        width: calc(100% - 20px);
+    }
+}
+.about-five-content-all {
+    background: url('../img/aboutPhotoTwo.jpg') no-repeat center center;
+    background-size: cover; /* Arka plan resmini kapsayacak şekilde ayarlayın */
+    padding: 20px 0; /* Yukarı ve aşağıdan padding miktarını azaltın */
+    color: #fff;
+    text-align: center;
+    height: 50vh; /* Yüksekliği küçültün, ihtiyaca göre değiştirebilirsiniz */
+    display: flex;
+    align-items: center; /* İçeriği dikey olarak ortalar */
+    justify-content: center; /* İçeriği yatay olarak ortalar */
+}
+
+.about-five-content {
+    max-width: 700px; /* İçerik genişliğini küçültün */
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 10px;
+}
+
+.about-five-content h2 {
+    font-size: 2rem; /* Başlık font boyutunu küçültün */
+    margin-bottom: 15px; /* Alt boşluğu azaltın */
+    font-weight: 700;
+    position: relative;
+    display: inline-block;
+    padding-bottom: 10px;
 }
 
 
 
+.about-five-content p {
+    font-size: 1rem; /* Metin font boyutunu küçültün */
+    margin-bottom: 15px; /* Alt boşluğu azaltın */
+}
+
+.about-five-content .btn-light {
+    background-color: #fff;
+    color: #000;
+    border: none;
+    padding: 8px 16px; /* Buton padding miktarını azaltın */
+    font-size: 0.875rem; /* Buton font boyutunu küçültün */
+    font-weight: 600;
+    border-radius: 5px;
+    text-transform: uppercase;
+}
+
+.about-five-content .btn-light:hover {
+    background-color: #f8f9fa;
+    color: #000;
+}
