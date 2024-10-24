@@ -283,19 +283,27 @@ body {
 }
 
 .about-image {
-    width: 80%;
-    max-width: 80%;
+    width: 500px;
+    height: 400px;
     border-radius: 15px;
     transition: transform 0.3s ease;
     margin: 10px 0;
 }
 
 .about-image-left {
+    width: 130%;
+    max-width: 130%;
+    height: 400px;
+    max-height: 80%;
     animation: slideFromLeft 1s forwards;
     margin-top: 20px;
 }
 
 .about-image-bottom {
+    width: 130%;
+    max-width: 130%;
+    height: 400px;
+    max-height: 80%;
     animation: slideFromBottom 1s forwards;
     margin-bottom: 20px;
 }

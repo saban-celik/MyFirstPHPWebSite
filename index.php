@@ -19,7 +19,7 @@
         $page = isset($_GET['page']) ? $_GET['page'] : 'home';
 
         // Dinamik içerik sayfalarını yükle
-        $allowedPages = ['home', 'about', 'services', 'blog', 'contact','product_photography'];
+        $allowedPages = ['home', 'about', 'services', 'blog', 'contact'];
         if (in_array($page, $allowedPages)) {
             include "pages/$page.php";
         } else {

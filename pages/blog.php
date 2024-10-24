@@ -1,3 +1,12 @@
+<?php
+require 'admin/db_connect.php'; 
+
+// Blog tablosundan verileri çekme
+$query = "SELECT * FROM blog ORDER BY date DESC ";
+$result = $conn->query($query);
+$blogs = $result->fetch_all(MYSQLI_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -23,17 +32,30 @@
         <div class="blog-two-content-all">
             <div class="blog-two-content">
                 <div class="container">
-                    <div class="row" id="blog-cards-container">
+                    <div class="row">
+                    <?php if (!empty($blogs)): ?>
+            <?php foreach ($blogs as $blog): ?>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <?php if (!empty($blog['image'])): ?>
+                            <img src="img/<?php echo htmlspecialchars($blog['image']); ?>" class="card-img-top" alt="Blog Resmi">
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($blog['title']); ?></h5>
+                            <p class="card-text"><?php echo htmlspecialchars($blog['content']); ?></p>
+                            <p class="card-date"><?php echo htmlspecialchars($blog['date']); ?></p>
+                        </div>
                     </div>
-                    <div class="more-content">
-                        <button id="load-more-btn" class="btn btn-primary">Daha Fazla Görüntüle</button>
-                        <p id="no-more-posts" class="text-muted" style="display: none;">Gösterilecek başka gönderi yok</p>
+                </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Henüz blog eklenmemiş.</p>
+        <?php endif; ?>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <script src="js/script.js"></script>
 </body>
 </html>

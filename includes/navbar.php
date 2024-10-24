@@ -1,4 +1,3 @@
-
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
     <div class="container">
         <a class="navbar-brand" href="index.php?page=home">
@@ -10,14 +9,11 @@
         </button>
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item <?php echo (isset($_GET['page']) && $_GET['page'] == 'home') ? 'active' : ''; ?>">
+                <li class="nav-item <?php echo (!isset($_GET['page']) || $_GET['page'] == 'home') ? 'active' : ''; ?>">
                     <a class="nav-link" href="index.php?page=home">Ana Sayfa</a>
                 </li>
                 <li class="nav-item <?php echo (isset($_GET['page']) && $_GET['page'] == 'about') ? 'active' : ''; ?>">
                     <a class="nav-link" href="index.php?page=about">Hakkımda</a>
-                </li>
-                <li class="nav-item <?php echo (isset($_GET['page']) && $_GET['page'] == 'product_photography') ? 'active' : ''; ?>">
-                    <a class="nav-link" href="index.php?page=product_photography">Ürün Çekimi</a>
                 </li>
                 <li class="nav-item <?php echo (isset($_GET['page']) && $_GET['page'] == 'services') ? 'active' : ''; ?>">
                     <a class="nav-link" href="index.php?page=services">Hizmetlerimiz</a>

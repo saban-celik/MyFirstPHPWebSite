@@ -1,0 +1,100 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+}
+
+h2 {
+    margin-bottom: 20px;
+    font-size: 24px;
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.card-title {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.card-text {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+.card-body form {
+    margin-top: 15px;
+}
+
+.form-label {
+    font-weight: bold;
+}
+
+.img-fluid {
+    border-radius: 10px;
+    max-width: 100%;
+    height: auto;
+}
+
+.btn {
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #000;
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: rgb(16, 98, 104);
+}
+
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #495057;
+}
+
+
+.card-img-top.small-img {
+    height: 300px; /* Resim yüksekliğini sınırlamak için */
+    width: 100%; /* Resim genişliğini kartın genişliğine ayarlamak için */
+    object-fit: cover;
+    object-position: top; /* Resmin üst kısmının görünmesini sağlar */
+}
+
+/* Resimlerin boyutlarını ayarla */
+.home5-image {
+    max-width: 300px; /* Resim genişliğini ayarla */
+    max-height: 300px; /* Resim yüksekliğini ayarla */
+    object-fit: cover; /* Resmin oranlarını koruyarak kesmesini sağlar */
+}
+/* CSS Dosyanıza Ekleyin */
+.brand-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.brand-card:hover {
+    transform: scale(1.05);
+}
+
+.brand-card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}

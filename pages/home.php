@@ -1,3 +1,54 @@
+<?php
+require 'admin/db_connect.php'; 
+
+// home1 tablosundan veri çekme
+$query1 = "SELECT * FROM home1 LIMIT 1";
+$result1 = $conn->query($query1);
+$home1Content = $result1->fetch_assoc();
+
+// home2 tablosundan veri çekme
+$query2 = "SELECT * FROM home2 LIMIT 1";
+$result2 = $conn->query($query2);
+$home2Content = $result2->fetch_assoc();
+
+// home3 tablosundan veri çekme
+$query3 = "SELECT * FROM home3 LIMIT 1";
+$result3 = $conn->query($query3);
+$home3Content = $result3->fetch_assoc();
+
+// home3_cards tablosundan veri çekme
+$query4 = "SELECT * FROM home3_cards LIMIT 6" ;
+$result4 = $conn->query($query4);
+$home3Cards = $result4->fetch_all(MYSQLI_ASSOC);
+
+// home4 tablosundan veri çekme
+$query5 = "SELECT * FROM home4";
+$result5 = $conn->query($query5);
+$home4Content = $result5->fetch_all(MYSQLI_ASSOC);
+
+// Verileri çekme
+$query_home5 = "SELECT * FROM home5 LIMIT 1"; // Veriyi çekmek için LIMIT 1 ekledim
+$result_home5 = $conn->query($query_home5);
+$home5Content = $result_home5->fetch_assoc(); // Veriyi almayı unutmayın
+
+$query_brands = "SELECT * FROM home5_brands";
+$result_brands = $conn->query($query_brands);
+
+// Markaları array'e at
+$brands = [];
+while ($row = $result_brands->fetch_assoc()) {
+    $brands[] = $row;
+}
+
+// İlk iki marka adı ve açıklamasını belirleyelim
+$brand_names = array_column($brands, 'brand_name');
+$brand_descriptions = array_column($brands, 'brand_description');
+
+// Blog tablosundan verileri çekme
+$query = "SELECT * FROM blog ORDER BY date DESC LIMIT 3";
+$result = $conn->query($query);
+$blogs = $result->fetch_all(MYSQLI_ASSOC);
+?>
 <!DOCTYPE html>
 <html lang="tr">
 <head>
@@ -14,211 +65,157 @@
         <div class="container home-content">
             <div class="text-image-side-by-side">
                 <div class="text-content">
-                    <h1>PHOTO<br> FILM <br> PRODUCTION<br> SOCIAL MEDIA</h1>
-                    <p>Moda Fotoğrafçılığı, Ürün Fotoğrafçılığı, Otel Fotoğrafçılığı, Still Life,<br> Headshot, Lookbook, Reklam ve Yemek Fotoğrafçılığı alanlarında<br> uzman ekibimizle marka ve kişisel imajınızı güçlendiriyoruz.</p>
+                    <?php if (!empty($home1Content)): ?>
+                        <h1><?php echo nl2br(htmlspecialchars($home1Content['title'])); ?></h1>
+                        <p><?php echo nl2br(htmlspecialchars($home1Content['content'])); ?></p>
+                    <?php else: ?>
+                        <p>No content available.</p>
+                    <?php endif; ?>
                     <a href="index.php?page=services" class="btn btn-primary">Hizmetleri Gör</a>
                     <a href="index.php?page=contact" class="btn btn-secondary">İletişime Geç</a>
                 </div>
                 <div class="image-content">
-                    <img src="img/backphoto.jpg" alt="Photo Example" class="img-fluid">
+                    <?php if (!empty($home1Content)): ?>
+                        <img src="img/<?php echo htmlspecialchars($home1Content['image']); ?>" alt="Photo Example" class="img-fluid">
+                    <?php else: ?>
+                        <p>No image available.</p>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>
     </div>
+
     <div class="home-two-content" id="about-section">
-    <div class="container home-content">
-        <div class="about-section">
-            <div class="image-content">
-                <img src="img/ekip3.jpg" alt="About Image" class="img-fluid">
+        <div class="container home-content">
+            <div class="about-section">
+                <?php if (!empty($home2Content)): ?>
+                    <div class="image-content">
+                        <img src="img/<?php echo htmlspecialchars($home2Content['image1']); ?>" alt="Image 1" class="img-fluid">
+                    </div>
+                    <div class="about-text-content">
+                        <h1><?php echo nl2br(htmlspecialchars($home2Content['title'])); ?></h1>
+                        <p><?php echo nl2br(htmlspecialchars($home2Content['content'])); ?></p>
+                        <a href="index.php?page=about" class="btn btn-primary">Devamını Oku</a>
+                    </div>
+                    <div class="about-images">
+                        <img src="img/<?php echo htmlspecialchars($home2Content['image2']); ?>" alt="Example Image 1" class="about-image about-image-left">
+                        <img src="img/<?php echo htmlspecialchars($home2Content['image3']); ?>" alt="Example Image 2" class="about-image about-image-bottom">
+                    </div>
+                <?php else: ?>
+                    <p>No content available.</p>
+                <?php endif; ?>
             </div>
-            <div class="about-text-content">
-                <h1>Hakkımda</h1>
-                <p>Merhaba, ben Ersin, yaklaşık dört yıl süresince sokak fotoğrafçılığı ve sekiz yıl boyunca düğün fotoğrafçılığı yapmış bir profesyonel fotoğrafçıyım. Şu anda ise kurumsal firmalara fotoğraf ve prodüksiyon konularında, PixelWorks markam ile danışmanlık hizmeti sunuyorum. Deneyimlerimle birleşen tutku ve yaratıcılığımı, her projeye özel etkileyici bir dokunuşla sunmayı amaçlıyorum.</p>
-                <a href="index.php?page=about" class="btn btn-primary">Devamını Oku</a>
-            </div>
-        </div>
-        <div class="about-images">
-            <img src="img/ekip2.jpg" alt="Example Image 1" class="about-image about-image-left">
-            <img src="img/ekip1.jpg" alt="Example Image 2" class="about-image about-image-bottom">
         </div>
     </div>
-</div>
 
     <div class="outer-container">
         <div class="container services-content">
-            <h2>Hizmet Alanları</h2>
-            <p>Her bir hizmet alanında müşterilerimize özel çözümler sunarak, profesyonel fotoğrafçılık hizmetlerimizi geniş bir yelpazede sunmaya devam ediyoruz.</p>
+            <?php if (!empty($home3Content)): ?>
+                <h2><?php echo nl2br(htmlspecialchars($home3Content['title'])); ?></h2>
+                <p><?php echo nl2br(htmlspecialchars($home3Content['content'])); ?></p>
+            <?php else: ?>
+                <p>No content available.</p>
+            <?php endif; ?>
             <a href="index.php?page=services" class="btn btn-primary">Tüm hizmetleri görüntüle</a>
             
             <div class="row">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/urun.jpeg" class="card-img-top" alt="Product Photography">
-                        <div class="card-body">
-                            <h5 class="card-title">Ürün Fotoğraf Çekimi</h5>
-                            <p class="card-text">Ürün fotoğraf çekimi, bir ürünün en iyi şekilde gösterilmesi için profesyonel bir fotoğrafçılık hizmetidir.</p>
+                <?php foreach ($home3Cards as $card): ?>
+                    <div class="col-md-4 mb-3">
+                        <div class="card">
+                            <?php if (!empty($card['card1_image'])): ?>
+                                <img src="img/<?php echo htmlspecialchars($card['card1_image']); ?>" class="card-img-top" alt="Kart Resmi">
+                            <?php endif; ?>
+                            <div class="card-body">
+                                <h5 class="card-title"><?php echo htmlspecialchars($card['card1_title']); ?></h5>
+                                <p class="card-text"><?php echo htmlspecialchars($card['card1_text']); ?></p>
+                            </div>
+                            <div class="card-footer"></div>
                         </div>
-                        <div class="card-footer"></div>
                     </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/yemek.jpeg"class="card-img-top" alt="Food Photography">
-                        <div class="card-body">
-                            <h5 class="card-title">Yemek Fotoğraf Çekimi</h5>
-                            <p class="card-text">Yemek fotoğraf çekimi, yemekleri çekici ve lezzetli göstermek için yapılan profesyonel bir fotoğrafçılık türüdür.</p>
-                        </div>
-                        <div class="card-footer"></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/otel.jpeg"class="card-img-top" alt="Hotel Photography">
-                        <div class="card-body">
-                            <h5 class="card-title">Otel Fotoğraf Çekimi</h5>
-                            <p class="card-text">Otel fotoğraf çekimi potansiyel misafirlere otelin atmosferini, konforunu ve özelliklerini göstererek onları cezbetmeyi amaçlar.</p>
-                        </div>
-                        <div class="card-footer"></div>
-                    </div>
-                </div>
-            </div>
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/moda.jpeg" class="card-img-top" alt="Fashion Photography">
-                        <div class="card-body">
-                            <h5 class="card-title">Moda Fotoğraf Çekimi</h5>
-                            <p class="card-text">Moda fotoğraf çekimi profesyonel modeller ve makyaj sanatçılarıyla çalışılarak giyim, aksesuar ve stil unsurlarını vurgulayan profesyonel bir fotoğrafçılık türüdür.</p>
-                        </div>
-                        <div class="card-footer"></div>
-                    </div>
-                    </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/portre.jpeg" class="card-img-top" alt="Portrait Photography">
-                        <div class="card-body">
-                            <h5 class="card-title">Portre Fotoğraf Çekimi</h5>
-                            <p class="card-text">Portre fotoğraf çekimi, bireylerin ya da grupların yüz ifadelerini, güzelliğini, kişiliğini ve duygusal durumları vurgulayan profesyonel bir fotoğrafçılık türüdür.</p>
-                        </div>
-                        <div class="card-footer"></div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card">
-                        <img src="img/drone.png" class="card-img-top" alt="Drone Photography">
-                        <div class="card-body">
-                            <h5 class="card-title">Drone Çekimi</h5>
-                            <p class="card-text">Drone çekimi, muhteşem fotoğraflar, manzaralar ve videolar çekmek için bir drone'un kullanılmasını içeren bir hava fotoğrafçılığı tekniğidir.</p>
-                        </div>
-                        <div class="card-footer"></div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
+
     <div class="home-four-content">
         <div class="container">
             <h2>Ekibimiz</h2>
             <div class="row">
-                <div class="col-md-3">
-                    <div class="team-member">
-                        <img src="img/ekip1.jpg" alt="Team Member 1" class="img-fluid">
-                        <div class="overlay">Team Member 1</div>
+                <?php foreach ($home4Content as $member): ?>
+                    <div class="col-md-3 mb-3">
+                        <div class="team-member">
+                            <?php if (!empty($member['image'])): ?>
+                                <img src="img/<?php echo htmlspecialchars($member['image']); ?>" alt="Team Member" class="img-fluid">
+                            <?php endif; ?>
+                            <div class="overlay"><?php echo htmlspecialchars($member['name']); ?></div>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="team-member">
-                        <img src="img/ekip2.jpg" alt="Team Member 2" class="img-fluid">
-                        <div class="overlay">Team Member 2</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="team-member">
-                        <img src="img/ekip3.jpg" alt="Team Member 3" class="img-fluid">
-                        <div class="overlay">Team Member 3</div>
-                    </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="team-member">
-                        <img src="img/ekip4.jpg" alt="Team Member 4" class="img-fluid">
-                        <div class="overlay">Team Member 4</div>
-                    </div>
-                </div>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
     <div class="home-five-content">
-    <div class="container equipment-content">
-        <div class="equipment-list">
-            <h2>Ekipmanlarımız</h2>
-            <p>Geniş fotoğraf ve video ekipmanlarımızla, ihtiyaçlarınıza yönelik kusursuz hizmet sunmayı amaçlıyoruz.</p>
-            <div class="equipment-lists">
-                <ul>
-                    <li>= Fujifilm Gfx 100s (Orta Format)</li>
-                    <li>= GF 23mm Lens</li>
-                    <li>= GF 120mm Macro Lens</li>
-                    <li>= GF 32-64 mm Lens</li>
-                    <li>= İmac M3 24"</li>
-                    <li>= Asus Proart Referans Monitör</li>
-                    <li>= Canon 100mm Macro Lens</li>
-                    <li>= Dji Rs 3 Gimbal</li>
-                </ul>
-                <ul>
-                    <li>= Canon R8</li>
-                    <li>= Canon 5D Mark IV</li>
-                    <li>= Canon 50mm Lens</li>
-                    <li>= Canon 35mm Lens</li>
-                    <li>= Macbook Pro M2 Max</li>
-                    <li>= Mac Studio + Display Set</li>
-                    <li>= Sony A7 3</li>
-                    <li>= Dji Mini 3 Pro</li>
-                </ul>
+        <div class="container equipment-content">
+            <div class="equipment-list">
+                <?php if (!empty($home5Content)): ?>
+                    <h2><?php echo htmlspecialchars($home5Content['title']); ?></h2>
+                    <p><?php echo htmlspecialchars($home5Content['description']); ?></p>
+                <?php else: ?>
+                    <p>No content available.</p>
+                <?php endif; ?>
+                <div class="equipment-lists">
+                    <ul>
+                        <?php foreach ($brand_names as $name): ?>
+                            <li>= <?php echo htmlspecialchars($name); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <ul>
+                        <?php foreach ($brand_descriptions as $description): ?>
+                            <li>= <?php echo htmlspecialchars($description); ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="equipment-image">
+                <?php
+                if (!empty($home5Content['image'])): ?>
+                    <img src="img/<?php echo htmlspecialchars($home5Content['image']); ?>" alt="Ekipman Görseli" class="img-fluid">
+                <?php else: ?>
+                    <p>Resim mevcut değil.</p>
+                <?php endif; ?>
             </div>
         </div>
-        <div class="equipment-image">
-            <img src="img/ekipmanlar.jpg" alt="Ekipman Görseli" class="img-fluid">
-        </div>
     </div>
-</div><div class="home-six-content">
+    <div class="home-six-content">
     <div class="container">
         <div class="header">
             <h2>Blog</h2>
             <a href="index.php?page=blog" class="btn btn-primary">Tüm İçerikler</a>
         </div>
         <div class="row">
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/fotostudyo.jpg" class="card-img-top" alt="Fotoğraf Stüdyosu">
-                    <div class="card-body">
-                        <h5 class="card-title">Fotoğraf Stüdyosu</h5>
-                        <p class="card-text">Halkalı Fotoğrafçı – Ersin Aydın Photography Ofisimiz Taşındı</p>
-                        <p class="card-date">11 Temmuz 2024</p>
+        <?php if (!empty($blogs)): ?>
+            <?php foreach ($blogs as $blog): ?>
+                <div class="col-md-4 mb-3">
+                    <div class="card">
+                        <?php if (!empty($blog['image'])): ?>
+                            <img src="img/<?php echo htmlspecialchars($blog['image']); ?>" class="card-img-top" alt="Blog Resmi">
+                        <?php endif; ?>
+                        <div class="card-body">
+                            <h5 class="card-title"><?php echo htmlspecialchars($blog['title']); ?></h5>
+                            <p class="card-text"><?php echo htmlspecialchars($blog['content']); ?></p>
+                            <p class="card-date"><?php echo htmlspecialchars($blog['date']); ?></p>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/dugunfoto.jpg" class="card-img-top" alt="Gelin Fotoğraf Çekimi">
-                    <div class="card-body">
-                        <h5 class="card-title">Gelin-Damat Fotoğraf Çekimi</h5>
-                        <p class="card-text">Gelin Fotoğraf Çekimi</p>
-                        <p class="card-date">11 Temmuz 2024</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card">
-                    <img src="img/hamilefoto.jpeg" class="card-img-top" alt="Hamile Fotoğraf Çekimi">
-                    <div class="card-body">
-                        <h5 class="card-title">Hamile Fotoğraf Çekimi</h5>
-                        <p class="card-text">Hamile Fotoğraf Çekimi</p>
-                        <p class="card-date">11 Temmuz 2024</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+            <?php endforeach; ?>
+        <?php else: ?>
+            <p>Henüz blog eklenmemiş.</p>
+        <?php endif; ?>
+    </div>
     </div>
 </div>
-</div>
-</div>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"></script>
 </body>
+</html>

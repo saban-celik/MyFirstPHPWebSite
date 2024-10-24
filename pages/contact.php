@@ -60,7 +60,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-12 mb-3">
+                <div class="message col-12 mb-3">
                     <div class="card">
                         <div class="card-body">
                             <form class="contact-form" novalidate>
